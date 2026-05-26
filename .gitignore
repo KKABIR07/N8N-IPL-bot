@@ -1,0 +1,17 @@
+# Environment variables — never commit real credentials
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+
+# n8n local data
+.n8n/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.log

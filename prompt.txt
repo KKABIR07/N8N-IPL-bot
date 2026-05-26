@@ -1,0 +1,489 @@
+# CLAUDE.md
+
+# IPL AI SYSTEM — ENTERPRISE GRADE MULTI-AGENT PLATFORM
+
+You are a senior:
+- AI Engineer
+- Full Stack Engineer
+- ML Engineer
+- Data Engineer
+- Backend Architect
+- DevOps Engineer
+- UI/UX Designer
+- Sports Analytics Engineer
+- Real-Time Systems Engineer
+
+Your task is to build a production-grade IPL AI ecosystem using:
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Local MongoDB
+- n8n
+- Groq API
+- Llama 3.3 70B
+- Python ML
+- Qdrant Vector DB
+- Kafka
+- Redis
+- Docker
+- React Frontend
+- Telegram Bot
+- Discord Bot
+- Web Dashboard
+
+The project must be:
+- scalable
+- modular
+- clean architecture
+- event-driven
+- AI-native
+- real-time capable
+- enterprise-grade
+- visually modern
+- production ready
+
+━━━━━━━━━━━━━━━━━━━
+# PROJECT GOAL
+━━━━━━━━━━━━━━━━━━━
+
+Build an AI-powered IPL analytics and fantasy cricket platform capable of:
+
+- Fantasy team generation
+- Match prediction
+- Win probability analysis
+- Live commentary generation
+- Player analytics
+- Semantic cricket search
+- AI insights
+- Real-time streaming analytics
+- Multi-agent AI coordination
+
+━━━━━━━━━━━━━━━━━━━
+# CURRENT DATABASE
+━━━━━━━━━━━━━━━━━━━
+
+MongoDB collections:
+
+1. matches
+2. deliveries
+
+Database exists both:
+- locally
+- on MongoDB Atlas
+
+━━━━━━━━━━━━━━━━━━━
+# EXPECTED SYSTEM ARCHITECTURE
+━━━━━━━━━━━━━━━━━━━
+
+Telegram / Discord / Web App
+            ↓
+        n8n Workflows
+            ↓
+ AI Router + Memory Layer
+            ↓
+ Groq Llama 3.3 70B
+            ↓
+────────────────────────
+|     Data Layer       |
+|                      |
+| MongoDB Atlas        |
+| IPL Historical Data  |
+| Live Match Data      |
+| User Data            |
+────────────────────────
+            ↓
+────────────────────────
+|    Intelligence      |
+|                      |
+| Python ML Engine     |
+| Match Prediction     |
+| Fantasy Prediction   |
+| Player Analysis      |
+────────────────────────
+            ↓
+────────────────────────
+|    Vector Search     |
+|                      |
+| Qdrant               |
+| Embeddings           |
+| Semantic Search      |
+────────────────────────
+            ↓
+Analytics + Predictions + AI Insights
+
+━━━━━━━━━━━━━━━━━━━
+# REQUIRED FEATURES
+━━━━━━━━━━━━━━━━━━━
+
+## 1. AI Fantasy Team Generator
+
+User asks:
+- “Best Dream11 team for MI vs CSK”
+
+System should:
+- analyze player form
+- analyze venue
+- analyze recent matches
+- analyze player matchups
+- generate captain and vice captain
+- suggest differential picks
+- explain reasoning
+
+━━━━━━━━━━━━━━━━━━━
+## 2. Match Prediction Engine
+
+Predict:
+- winner probability
+- projected score
+- top performers
+- toss impact
+- phase-wise performance
+
+Use:
+- XGBoost
+- LightGBM
+- CatBoost
+
+━━━━━━━━━━━━━━━━━━━
+## 3. Player Analytics Engine
+
+User asks:
+- “Analyze Kohli vs Bumrah”
+
+System should:
+- calculate strike rate
+- dismissals
+- phase analysis
+- venue analysis
+- pressure analysis
+
+━━━━━━━━━━━━━━━━━━━
+## 4. AI Commentary Engine
+
+Generate:
+- human-like commentary
+- emotional commentary
+- momentum commentary
+- wicket reactions
+
+Example:
+“Bumrah nails the yorker again. Russell had absolutely no answer.”
+
+━━━━━━━━━━━━━━━━━━━
+## 5. Semantic Cricket Search (RAG)
+
+User asks:
+- “Best IPL finishers against spin since 2020”
+
+Pipeline:
+- embedding search
+- vector retrieval
+- Groq analysis
+- natural language output
+
+━━━━━━━━━━━━━━━━━━━
+## 6. Real-Time Match Analytics
+
+Features:
+- live win probability
+- momentum graphs
+- projected score
+- batter impact
+- bowler pressure
+
+━━━━━━━━━━━━━━━━━━━
+## 7. Multi-Agent AI System
+
+Create specialized agents:
+
+1. Fantasy Agent
+2. Match Prediction Agent
+3. Stats Agent
+4. Commentary Agent
+5. News Agent
+6. Injury Agent
+7. RAG Search Agent
+
+Agents communicate through:
+- Kafka
+- Redis streams
+- event queues
+
+━━━━━━━━━━━━━━━━━━━
+# BACKEND REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━
+
+Use:
+- Node.js
+- Express.js
+- TypeScript
+
+Architecture:
+- modular
+- service-based
+- scalable
+- clean folder structure
+
+Include:
+- controllers
+- routes
+- services
+- repositories
+- middleware
+- validation
+- error handling
+- logging
+- rate limiting
+- JWT authentication
+- RBAC system
+
+━━━━━━━━━━━━━━━━━━━
+# DATABASE REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━
+
+Collections:
+
+- matches
+- deliveries
+- players
+- teams
+- venues
+- fantasy_predictions
+- player_form
+- user_preferences
+- commentary
+- embeddings
+- live_scores
+
+Create optimized:
+- indexes
+- aggregation pipelines
+- caching strategies
+
+━━━━━━━━━━━━━━━━━━━
+# REQUIRED APIs
+━━━━━━━━━━━━━━━━━━━
+
+Build APIs:
+
+GET /matches
+GET /match/:id
+GET /player/:name
+GET /team/:name
+GET /headtohead
+POST /predict
+POST /fantasy
+POST /commentary
+POST /semantic-search
+GET /live-insights
+
+━━━━━━━━━━━━━━━━━━━
+# PYTHON ML ENGINE
+━━━━━━━━━━━━━━━━━━━
+
+Create separate Python microservice.
+
+Responsibilities:
+- fantasy prediction
+- win probability
+- projected scores
+- player performance prediction
+
+Use:
+- pandas
+- numpy
+- scikit-learn
+- xgboost
+- catboost
+- lightgbm
+
+Expose REST APIs using:
+- FastAPI
+
+━━━━━━━━━━━━━━━━━━━
+# VECTOR DATABASE
+━━━━━━━━━━━━━━━━━━━
+
+Use:
+- Qdrant
+
+Store:
+- player summaries
+- match summaries
+- commentary embeddings
+- semantic search vectors
+
+Use:
+- cosine similarity
+- embedding pipelines
+
+━━━━━━━━━━━━━━━━━━━
+# REAL-TIME SYSTEM
+━━━━━━━━━━━━━━━━━━━
+
+Use:
+- Kafka
+- Socket.IO
+- Redis
+
+Kafka topics:
+- live_scores
+- wickets
+- fantasy_updates
+- commentary
+- predictions
+- analytics
+
+━━━━━━━━━━━━━━━━━━━
+# N8N REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━
+
+Build workflows for:
+
+1. Telegram bot
+2. Discord bot
+3. AI orchestration
+4. MongoDB querying
+5. Groq AI requests
+6. Prediction pipelines
+7. Notification system
+
+Workflows must be:
+- modular
+- reusable
+- production ready
+
+━━━━━━━━━━━━━━━━━━━
+# FRONTEND REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━
+
+Use:
+- React
+- TypeScript
+- TailwindCSS
+- Framer Motion
+- Recharts
+
+Create:
+- modern UI
+- dark theme
+- glassmorphism
+- live dashboards
+- fantasy dashboard
+- analytics panels
+- live graphs
+- player cards
+
+Pages:
+- Home
+- Live Match
+- Fantasy AI
+- Player Analytics
+- Predictions
+- Team Analysis
+- Match Center
+
+━━━━━━━━━━━━━━━━━━━
+# UI/UX STYLE
+━━━━━━━━━━━━━━━━━━━
+
+Design inspiration:
+- ESPN Cricinfo
+- Cricbuzz
+- Sofascore
+- modern AI SaaS platforms
+
+Style:
+- futuristic
+- premium
+- minimal
+- responsive
+- animated
+- highly interactive
+
+━━━━━━━━━━━━━━━━━━━
+# AUTHENTICATION
+━━━━━━━━━━━━━━━━━━━
+
+Roles:
+- Admin
+- Premium User
+- Free User
+- Analyst
+
+Support:
+- Google OAuth
+- JWT
+- Session management
+
+━━━━━━━━━━━━━━━━━━━
+# DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━
+
+Use Docker Compose.
+
+Services:
+- backend
+- frontend
+- python-ml
+- qdrant
+- kafka
+- zookeeper
+- redis
+- n8n
+- mongodb
+
+Include:
+- nginx reverse proxy
+- SSL support
+- production configs
+
+━━━━━━━━━━━━━━━━━━━
+# CODE QUALITY
+━━━━━━━━━━━━━━━━━━━
+
+Requirements:
+- strict TypeScript
+- reusable code
+- production architecture
+- SOLID principles
+- scalable design
+- comments
+- documentation
+
+━━━━━━━━━━━━━━━━━━━
+# IMPORTANT
+━━━━━━━━━━━━━━━━━━━
+
+The platform must feel like:
+- an AI sports intelligence company
+- an enterprise analytics platform
+- a next-generation cricket AI ecosystem
+
+Prioritize:
+1. scalability
+2. AI integration
+3. real-time analytics
+4. beautiful UI
+5. modular backend
+6. production readiness
+
+Generate:
+- complete architecture
+- folder structure
+- backend code
+- frontend code
+- n8n workflows
+- Docker configs
+- database schemas
+- ML services
+- deployment setup
+- API integrations
+- Kafka setup
+- Qdrant integration
+- authentication system
+- dashboards
+- AI pipelines
+
+The codebase should be enterprise-grade and startup-ready.
