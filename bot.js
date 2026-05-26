@@ -6,9 +6,29 @@
 
 const https = require('https');
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN_HERE';
-const N8N_WEBHOOK = 'http://localhost:5678/webhook/ipl-bot';
+// Load .env file from same directory
+function loadEnv() {
+  try {
+    const envPath = path.join(__dirname, '.env');
+    const lines = fs.readFileSync(envPath, 'utf8').split('\n');
+    lines.forEach(line => {
+      const [key, ...vals] = line.split('=');
+      if (key && vals.length) process.env[key.trim()] = vals.join('=').trim();
+    });
+  } catch (e) { /* .env not found, rely on shell env */ }
+}
+loadEnv();
+
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const N8N_WEBHOOK = process.env.N8N_WEBHOOK_URL || 'http://localhost:5678/webhook/ipl-bot';
+
+if (!BOT_TOKEN || BOT_TOKEN === 'YOUR_TELEGRAM_BOT_TOKEN_HERE') {
+  console.error('❌ TELEGRAM_BOT_TOKEN not set in .env file');
+  process.exit(1);
+}
 const POLL_TIMEOUT = 30; // long-poll seconds
 
 let offset = 0;
